@@ -72,3 +72,10 @@ CREATE TABLE public.produtos_filial(
 	idfornecedor int4 NULL,
 	CONSTRAINT produtos_filial_pkey PRIMARY KEY (filial_id, produto_id)
 );
+
+
+CREATE TABLE public.fornecedor(
+	idforncedor  varchar(25) NOT NULL,
+	razao_social varchar(255) NOT NULL,
+	CONSTRAINT fornecedor_pkey PRIMARY KEY (idforncedor)
+);
