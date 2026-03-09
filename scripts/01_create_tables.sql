@@ -1,3 +1,16 @@
+/* 
+	Script original fornecido no teste técnico.
+
+	Algumas inconsistências foram identificadas nas estruturas (tipos de dados, nomenclatura etc).
+	Mesmo assim, optei por manter a estrutura original fornecida no teste.
+
+	Motivo:
+	Em cenários reais, alterações estruturais podem impactar sistemas legados e dados já existentes
+	em produção.
+
+	Portanto, as sugestões de melhoria serão documentadas ao final deste arquivo.
+*/
+
 CREATE TABLE public.venda(
 	venda_id int8 NOT NULL,
 	data_emissao date NOT NULL,
@@ -10,3 +23,21 @@ CREATE TABLE public.venda(
 	unidade_medida varchar(3) NULL,
 	CONSTRAINT pk_consumo PRIMARY KEY (filial_id, venda_id, data_emissao, produto_id, item, horariomov)
 )
+
+
+CREATE TABLE public.pedido_compra(
+	pedido_id float8 DEFAULT 0 NOT NULL,
+	data_pedido date NULL,
+	item float8 DEFAULT 0 NOT NULL,
+	produto_id varchar(25) DEFAULT '0' NOT NULL,
+	descricao_produto varchar(255) NULL,
+	ordem_compra float8 DEFAULT 0 NOT NULL,
+	qtde_pedida float8 NULL,
+	filial_id int4 NULL,
+	data_entrega date NULL,
+	qtde_entregue float8 DEFAULT 0 NOT NULL,
+	qtde_pendente float8 DEFAULT 0 NOT NULL,
+	preco_compra float8 DEFAULT 0 NULL,
+	fornecedor_id int4 DEFAULT 0 NULL,
+	CONSTRAINT pedido_compra_pkey PRIMARY KEY (pedido_id , produto_id, item)
+);
