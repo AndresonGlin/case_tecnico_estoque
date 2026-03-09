@@ -41,3 +41,23 @@ CREATE TABLE public.pedido_compra(
 	fornecedor_id int4 DEFAULT 0 NULL,
 	CONSTRAINT pedido_compra_pkey PRIMARY KEY (pedido_id , produto_id, item)
 );
+
+
+/*
+	Correção aplicada na tabela entradas_mercadoria, para ela poder ser criada.
+	- Incluído coluna ordem_compra, pois ela não existe na estrutura, apenas na PK.
+	- Obs: Manteve-se o mesmo tipo de dado (float8) utilizado na tabela pedido_compra, para se manter o padrão.
+*/
+
+CREATE TABLE public.entradas_mercadoria (
+	ordem_compra float8 NOT NULL,
+	data_entrada date NULL,
+	nro_nfe varchar(255) NOT NULL,
+	item float8 DEFAULT 0 NOT NULL,
+	produto_id varchar(25) DEFAULT '0' NOT NULL,
+	descricao_produto varchar(255) NULL,
+	qtde_recebida float8 NULL,
+	filial_id int4 NULL,
+	custo_unitario numeric(12, 4) DEFAULT 0 NOT NULL,
+	CONSTRAINT entradas_mercadoria_pkey PRIMARY KEY (ordem_compra, item, produto_id, nro_nfe)
+);
