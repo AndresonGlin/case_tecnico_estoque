@@ -56,3 +56,31 @@ Após a importação foi realizada a verificação da quantidade de registros:
 Após a validação da tabela venda, o mesmo processo de importação
 foi aplicado às demais tabelas da planilha:
 
+Obs: Caso alguma tabela apresente inconsistências, estas serão
+registradas abaixo, juntamente com a decisão adotada para permitir
+a continuidade do processo de importação.
+
+-----------------------------------------------------
+
+Tabela: pedido_compra
+
+Inconsistências identificadas:
+
+1. A coluna qtde_pendente não existe na estrutura da tabela no
+   banco de dados, porém está presente na base de dados a ser importada.
+
+2. Foram identificadas linhas contendo mais colunas do que o layout
+   definido na tabela.
+
+Decisões adotadas:
+
+1. Foi criada a coluna qtde_pendente base de dados enviada para importação,
+   inicialmente com valores zerados, para permitir a importação
+   completa dos registros.
+
+2. As colunas adicionais sem correspondência no layout definido
+   foram removidas do arquivo de importação.
+
+Obs: A base de dados original foi preservada e armazenada para
+posterior análise junto ao cliente, com o objetivo de validar
+essas inconsistências identificadas.
