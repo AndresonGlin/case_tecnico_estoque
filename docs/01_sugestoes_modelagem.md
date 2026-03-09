@@ -55,6 +55,7 @@ O campo qtde_recebida utiliza FLOAT. Dependendo da regra de
 negócio, poderia ser avaliado o uso de NUMERIC para maior
 controle de precisão.
 
+
 Tabela: produtos_filial
 -----------------------------------------------------
 
@@ -78,8 +79,27 @@ de itens geralmente não precisam de ponto flutuante.
 
 4 - Possível erro de nomenclatura
 A coluna "decricao" aparenta ser um erro de digitação.
-O ideal seria utilizar "descricao" para manter consistência
-e clareza na estrutura do banco.
+O correto seria utilizar "descricao".
+
+
+Tabela: fornecedor
+-----------------------------------------------------
+
+1 - Inconsistência na chave primária
+O script original definia a chave primária utilizando a coluna
+idproduto, porém essa coluna não existe na estrutura da tabela. 
+Removido idproduto da PK.
+
+2 - Possível erro de nomenclatura
+A coluna "idforncedor" aparenta possuir um erro de digitação.
+O nome mais adequado seria "idfornecedor", seguindo um padrão
+mais claro e consistente de nomenclatura.
+
+3 - Tipo de dado do identificador
+O campo idforncedor foi definido como VARCHAR(25). Caso esse
+identificador represente um código numérico ou sequencial,
+poderia ser avaliado o uso de INTEGER ou BIGINT para melhor
+padronização de identificadores.
 
 
 Padronização geral de tipos
