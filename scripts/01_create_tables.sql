@@ -8,7 +8,7 @@
 	Em cenários reais, alterações estruturais podem impactar sistemas legados e dados já existentes
 	em produção.
 
-	Portanto, as sugestões de melhoria serão documentadas ao final deste arquivo.
+	Portanto, as sugestões de melhoria estão documentadas no arquivo 01_sugestao_modelagem.md (pasta docs).
 */
 
 CREATE TABLE public.venda(
