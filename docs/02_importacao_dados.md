@@ -84,3 +84,8 @@ Decisões adotadas:
 Obs: A base de dados original foi preservada e armazenada para
 posterior análise junto ao cliente, com o objetivo de validar
 essas inconsistências identificadas.
+
+
+-----------------------------------------------------
+
+Tabela: entradas_mercadoria
