@@ -60,7 +60,6 @@ CREATE TABLE public.entradas_mercadoria (
 );
 
 
-
 CREATE TABLE public.produtos_filial(
 	filial_id int4 NULL,
 	produto_id varchar(255) NOT NULL,
