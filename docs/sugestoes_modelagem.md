@@ -31,6 +31,31 @@ A constraint "pk_consumo" poderia ser renomeada para "pk_venda",
 para refletir corretamente a tabela onde está definida.
 
 
+Tabela: entradas_mercadoria
+-----------------------------------------------------
+
+1 - Inconsistência na chave primária
+A estrutura original da tabela não possuía a coluna ordem_compra,
+apesar dela estar definida na chave primária.
+
+Foi necessário incluir essa coluna na estrutura da tabela para
+permitir a criação correta da PK.
+
+2 - Uso de FLOAT para identificadores
+O campo item utiliza FLOAT, porém ele faz parte da chave primária.
+O ideal seria utilizar INTEGER, pois identificadores não devem
+utilizar tipos de ponto flutuante.
+
+3 - Uso de DEFAULT em identificadores
+O campo produto_id possui DEFAULT '0'. Esse tipo de prática pode
+gerar registros inconsistentes.
+
+4 - Campos de quantidade
+O campo qtde_recebida utiliza FLOAT. Dependendo da regra de
+negócio, poderia ser avaliado o uso de NUMERIC para maior
+controle de precisão.
+
+
 Padronização geral de tipos
 -----------------------------------------------------
 
@@ -40,4 +65,7 @@ do modelo. Por esse motivo não foi detalhado todas as melhorias de cada tabela 
 Por exemplo:
 
 - Campos de quantidade definidos como FLOAT poderiam utilizar
-NUMERIC para evitar problemas de precisão.
+NUMERIC para evitar problemas de precisão. (Dependendo da regra de negócio)
+
+- Identificadores (IDs, itens, ordens, etc.) deveriam utilizar
+INTEGER
