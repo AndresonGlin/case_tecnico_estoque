@@ -55,6 +55,32 @@ O campo qtde_recebida utiliza FLOAT. Dependendo da regra de
 negócio, poderia ser avaliado o uso de NUMERIC para maior
 controle de precisão.
 
+Tabela: produtos_filial
+-----------------------------------------------------
+
+1 - Correções estruturais necessárias
+O script original apresentava alguns problemas que impediam
+a criação da tabela:
+
+- Ausência de vírgula após a coluna idfornecedor.
+- Nome incorreto da coluna na chave primária (idproduto).
+- Nome da coluna idfonecedor incorreto, corrigido para idfornecedor.
+
+2 - Campos de valores monetários utilizando FLOAT
+Os campos preco_unitario, preco_compra e preco_venda utilizam FLOAT.
+Para valores financeiros o recomendado seria utilizar
+NUMERIC(12,4), evitando problemas de precisão em cálculos.
+
+3 - Campo de estoque utilizando FLOAT
+O campo estoque utiliza FLOAT. Dependendo da regra de negócio,
+poderia ser avaliado o uso de INTEGER ou NUMERIC, pois quantidades
+de itens geralmente não precisam de ponto flutuante.
+
+4 - Possível erro de nomenclatura
+A coluna "decricao" aparenta ser um erro de digitação.
+O ideal seria utilizar "descricao" para manter consistência
+e clareza na estrutura do banco.
+
 
 Padronização geral de tipos
 -----------------------------------------------------
