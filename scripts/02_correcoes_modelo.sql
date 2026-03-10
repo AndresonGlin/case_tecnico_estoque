@@ -13,6 +13,10 @@ GENERATED ALWAYS AS (qtde_pedida - qtde_entregue) STORED;
 ALTER TABLE public.produtos_filial
 RENAME COLUMN idfornecedor TO fornecedor_id;
 
+--Alteração: corrigir coluna para o nome descricao
+ALTER TABLE public.produtos_filial
+RENAME COLUMN decricao TO descricao;
+
 --Tabela: fornecedor
 --Alteração: padronizar coluna para o nome fornecedor_id
 ALTER TABLE public.fornecedor
