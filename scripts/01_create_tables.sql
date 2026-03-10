@@ -45,7 +45,6 @@ CREATE TABLE public.pedido_compra(
 
 
 
-
 CREATE TABLE public.entradas_mercadoria (
 	ordem_compra float8 NOT NULL,
 	data_entrada date NULL,

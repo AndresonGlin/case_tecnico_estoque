@@ -101,6 +101,8 @@ Inconsistências identificadas:
    valores dessa coluna possuem um prefixo textual "F" antes do código
    numérico (exemplo: F01, F02).
 
+2. Alterado idfornecedor para fornecedor_id no banco e planilha, seguindo o    padrão da tabela pedido_compra. (alteração está na pasta script -> 02_correcoes_modelo.sql) 
+
 Decisões adotadas:
 
 1. Para viabilizar a importação dos dados, foi realizada a remoção do
@@ -114,7 +116,9 @@ Tabela: fornecedor
 
 Ajustes realizados:
 
-1. A coluna idfornecedor na estrutura do banco de dados está definida
+1. Alterado idforncedor para fornecedor_id no banco e planilha, seguindo o    padrão da tabela pedido_compra e prudutos_filial. (alteração está na pasta script -> 02_correcoes_modelo.sql) 
+
+2. A coluna fornecedor_id na estrutura do banco de dados está definida
    como tipo numérico (INT4). Entretanto, na planilha de origem os
    valores dessa coluna possuem um prefixo textual "F" antes do código
    numérico (exemplo: F01, F02).
@@ -124,7 +128,7 @@ Decisões adotadas:
 1. Para viabilizar a importação dos dados, foi realizada a remoção do
    prefixo "F" dos valores da coluna idfornecedor, mantendo apenas a
    parte numérica do identificador.
-   
+
 
 Obs: A base de dados original foi preservada para futura validação
 junto ao cliente, caso seja necessário confirmar qual formato de
