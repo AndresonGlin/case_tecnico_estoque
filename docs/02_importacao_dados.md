@@ -100,6 +100,8 @@ Inconsistências identificadas:
 
 2. Alterado idfornecedor para fornecedor_id no banco e planilha, seguindo o padrão da tabela pedido_compra. (alteração está na pasta script -> 02_correcoes_modelo.sql) 
 
+3. Corrigido a coluna na planilha de decricao para descricao.
+
 Decisões adotadas:
 
 1. Para viabilizar a importação dos dados, foi realizada a remoção do

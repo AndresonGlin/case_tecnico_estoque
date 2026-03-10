@@ -65,7 +65,7 @@ a criação da tabela:
 
 - Ausência de vírgula após a coluna idfornecedor.
 - Nome incorreto da coluna na chave primária (idproduto).
-- Nome da coluna idfonecedor incorreto, corrigido para idfornecedor.
+- Nome da coluna idfonecedor incorreto, corrigido para fornecedor_id (pasta script -> 02_correcoes_modelo.sql).
 
 2 - Campos de valores monetários utilizando FLOAT
 Os campos preco_unitario, preco_compra e preco_venda utilizam FLOAT.
