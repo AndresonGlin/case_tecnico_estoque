@@ -29,11 +29,11 @@ Tabela: venda (passo a passo)
 Coluna / Tipo
 
 - venda_id: inteiro 
-- data_emissao: data (transformado)
+- data_emissao: texto (padrão: YYYY-MM-DD)
 - horariomov: texto 
 - produto_id: texto
-- qtde_vendida: numero (Subtituido vírgula por ponto)
-- valor_unitario: numero (Subtituido vírgula por ponto)
+- qtde_vendida: texto (Subtituido vírgula por (.))
+- valor_unitario: texto (Subtituido vírgula por (.))
 - filial_id: inteiro 
 - item: inteiro 
 - unidade_medida: texto
@@ -43,8 +43,9 @@ Coluna / Tipo
 
 Durante o processo de importação, os dados da planilha foram adaptados para atender à estrutura da tabela venda no banco:
 
-- Conversão de data_emissao para o tipo DATE
-- Substituição do separador decimal de vírgula (,) por ponto (.), nos campos qtde_vendida, valor_unitario.
+- Conversão de data_emissao para o tipo TEXTO (padrão: YYYY-MM-DD). Como se trata de poucas linhas, recomendo salvar em um documento a coluna de datas, em seguida
+transforme a coluna na planilha para o tipo texto e depois cole as datas no formato YYYY-MM-DD.
+- Substituição do separador decimal de vírgula (,) por ponto (.), nos campos qtde_vendida, valor_unitario e transformado para Texto a coluna. 
     
 3 - Validação inicial
 
@@ -66,19 +67,15 @@ Tabela: pedido_compra
 
 Inconsistências identificadas:
 
-1. A coluna qtde_pendente não existe na estrutura da tabela no
-   banco de dados, porém está presente na base de dados a ser importada.
+1. A coluna qtde_pendente não existe na base enviada para importar, porém existe na entrutura do banco de dados. 
+   Obs: Após a tabela ter sido criada, sua coluna foi tratada (pasta script -> 02_correcoes_modelo.sql) para fazer o cálculo automáticamente. 
 
 2. Foram identificadas linhas contendo mais colunas do que o layout
    definido na tabela.
 
 Decisões adotadas:
 
-1. Foi criada a coluna qtde_pendente base de dados enviada para importação,
-   inicialmente com valores zerados, para permitir a importação
-   completa dos registros.
-
-2. As colunas adicionais sem correspondência no layout definido
+1. As colunas adicionais sem correspondência no layout definido
    foram removidas do arquivo de importação.
 
 Obs: A base de dados original foi preservada e armazenada para
@@ -101,7 +98,7 @@ Inconsistências identificadas:
    valores dessa coluna possuem um prefixo textual "F" antes do código
    numérico (exemplo: F01, F02).
 
-2. Alterado idfornecedor para fornecedor_id no banco e planilha, seguindo o    padrão da tabela pedido_compra. (alteração está na pasta script -> 02_correcoes_modelo.sql) 
+2. Alterado idfornecedor para fornecedor_id no banco e planilha, seguindo o padrão da tabela pedido_compra. (alteração está na pasta script -> 02_correcoes_modelo.sql) 
 
 Decisões adotadas:
 
