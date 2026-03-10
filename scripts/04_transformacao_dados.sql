@@ -60,6 +60,6 @@ EXECUTE FUNCTION gerar_idfornecedor();
 INSERT INTO produtos_filial(filial_id,produto_id,descricao,estoque,preco_unitario,preco_compra,preco_venda)VALUES(1,'P999','Produto Teste', 10, 5, 3, 8);
 
 /*
-Obs: A trigger trg_gerar_fornecedor garante que, ao inserir um novo produto sem fornecedor definido, seja atribuído automaticamente um identificador numérico sequencial. Porém
-a tabela fornecedor não é populada.
+Observação: A trigger atual gera automaticamente um fornecedor_id na tabela produtos_filial, independente da existência do fornecedor na tabela fornecedor.
+Em uma implementação real, é recomendado que os produtos se relacionem com fornecedores existentes para manter a integridade referencial.
 */

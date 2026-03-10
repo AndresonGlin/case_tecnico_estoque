@@ -4,7 +4,7 @@
 select 
 	to_char(venda.data_emissao,'mm/yyyy') as competencia,
     venda.produto_id,
-    coalesce(pf.decricao, 'Sem Descricao') as descricao,   
+    coalesce(pf.descricao, 'Sem Descricao') as descricao,   
     sum(venda.qtde_vendida) as total_quantidade_vendida,
     round(sum(venda.qtde_vendida * venda.valor_unitario)::numeric, 2) AS total_valor_vendido
 from venda 
@@ -14,7 +14,7 @@ where venda.data_emissao between '2025-02-01' and '2025-02-28'
 group by
 		 to_char(venda.data_emissao,'mm/yyyy'),
 		 venda.produto_id, 
-		 pf.decricao		 
+		 pf.descricao		 
 order by venda.produto_id;
 
 
