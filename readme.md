@@ -1,4 +1,4 @@
-# 📊 Desafio Técnico – Análise e Validação de Dados (Systock)
+# 📊 Desafio Técnico (Systock)
 
 Este repositório contém a solução desenvolvida para o desafio técnico proposto pela Systock.
 O objetivo do projeto foi analisar uma base de dados fornecida, realizar a modelagem do banco, importar os dados, validar inconsistências e documentar o processo de validação.
@@ -37,7 +37,7 @@ systock-desafio/
 Durante o desenvolvimento do desafio foi utilizado um **board Kanban no GitHub Projects** para organizar e acompanhar o progresso das atividades.
 
 ```bash
-Link: https://github.com/users/AndresonGlin/projects/6/views/1
+https://github.com/users/AndresonGlin/projects/6/views/1
 ```
 
 O quadro foi estruturado com colunas como:
@@ -88,7 +88,7 @@ PostgreSQL 18.1 (Debian 18.1-1.pgdg13+2)
 ## 1️⃣ Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/systock-desafio.git
+git clone https://github.com/AndresonGlin/case_tecnico_estoque.git
 ```
 
 Entrar na pasta do projeto:
